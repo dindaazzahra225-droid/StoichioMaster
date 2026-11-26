@@ -60,7 +60,7 @@ create table if not exists public.calculation_history (
   id bigint generated always as identity primary key,
   user_id uuid not null references auth.users (id) on delete cascade,
   calc_type text not null
-    check (calc_type in ('mol_massa', 'gas_stp', 'molaritas', 'pereaksi_pembatas')),
+    check (calc_type in ('mol_massa', 'gas_stp', 'molaritas', 'pereaksi_pembatas', 'penyetaraan_reaksi')),
   title text not null,
   input_summary jsonb not null default '{}'::jsonb,
   result_summary jsonb not null default '{}'::jsonb,
